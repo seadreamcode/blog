@@ -2,7 +2,7 @@ backend:
   name: github
   repo: seadreamcode/blog
 
-site_url: https://example.com
+site_url: https://seadreamcode.netlify.com
 
 media_folder: assets/uploads
 
