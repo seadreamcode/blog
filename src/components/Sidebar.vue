@@ -1,25 +1,9 @@
 <template>
-  <aside class="sm:max-w-xs sm:pb-6">
+  <aside class="mt-6 px-6 sm:max-w-xs sm:pb-6">
+    <Header :title="$static.metaData.siteName" />
     <section>
-      <article>
-        <header>
-          <div>
-            <span class="block text-5xl" role="img" alt="Man Technologist Emoji">👨‍💻</span>
-          </div>
-          <p>
-            <strong>Hello, I'm Jesse</strong>
-          </p>
-          <p class="my-2">19 years old &mdash; Junior Web Developer</p>
-          <p class="mb-6">
-            I'm interested in
-            <mark class="bg-green-200 font-semi">Serverless</mark>,
-            <mark class="bg-green-200">GraphQL</mark> &amp; the
-            <mark class="bg-green-200">World Wide Web</mark>. I also make electronic instruments.
-          </p>
-        </header>
-      </article>
       <section>
-        <div class="mb-4 text-xs">
+        <div class="my-6 text-xs">
           <div class="inline-block rounded-full py-1 px-4 mr-1 mb-2 bg-green-200">Node</div>
           <div class="inline-block rounded-full py-1 px-4 mr-1 mb-2 bg-blue-200">Golang</div>
           <div
@@ -44,7 +28,7 @@
           <span class="block underline">Twitter</span>
           <a class="text-blue-700" href="#">@jessethesibley</a>
         </p>
-        <p class="mb-6">
+        <p class="">
           <span class="block underline">Email</span>
           <a class="text-blue-700" href="#">hi@seadream.dev</a>
         </p>
@@ -53,14 +37,20 @@
   </aside>
 </template>
 
-<style>
-    @media (min-width: 640px) {
-        .sm\:max-w-xs {
-            max-width: 14rem !important;
-        }
-    }
+<static-query>
+query {
+  metaData {
+    siteName
+  }
+}
+</static-query>
 
-    .\:max-w-xs {
-        max-width: 14rem !important;
-    }
-</style>
+<script>
+import Header from '~/components/Header'
+
+export default {
+  components: {
+    Header
+  }
+}
+</script>

@@ -1,28 +1,19 @@
 <template>
-  <div class="layout">
-    <Header :title="$static.metaData.siteName" />
-    <main class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row">
+  <div class="layout container mx-auto">
+    <div class="flex flex-col sm:flex-row">
       <Sidebar />
-      <slot />
-    </main>
+      <main class="mt-6 px-6 max-w-4xl">
+        <slot />
+      </main>
+    </div>
   </div>
 </template>
 
-<static-query>
-query {
-  metaData {
-    siteName
-  }
-}
-</static-query>
-
 <script>
-import Header from '~/components/Header'
 import Sidebar from '~/components/Sidebar'
 
 export default {
   components: {
-    Header,
     Sidebar
   }
 }
@@ -32,4 +23,10 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
 </style>

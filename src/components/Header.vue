@@ -1,5 +1,5 @@
 <template>
-  <header class="max-w-4xl mx-auto p-6">
+  <header class="py-4">
     <div class="flex sm:items-center flex-col sm:flex-row justify-between">
       <div class>
         <h1 class="font-semibold text-2xl">
